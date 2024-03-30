@@ -1,0 +1,93 @@
+<script>
+  window.onload = () => {
+    const code = location.href.substring(
+      location.href.indexOf("code") + 5,
+      location.href.length,
+    );
+
+    if (location.href.indexOf("code") > -1) {
+      const req = new XMLHttpRequest();
+      req.open("POST", ""); //mettre le lien de redirection
+      req.send(code);
+      req.onload = () => {};
+    }
+  };
+</script>
+
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@0.6.1/build/pure-min.css"
+      integrity="sha384-CCTZv2q9I9m3UOxRLaJneXrrqKwUNOzZ6NGEUMwHtShDJ+nCoiXJCAgi05KfkLGY"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      data-domain="1vx.nl"
+      src="https://1vx.nl/js/script.js"
+    ></script>
+    <style>
+      html,
+      body {
+        background: linear-gradient(130deg, #000000, #808080);
+        color: #fff;
+        text-align: center;
+        padding: 2em 1em;
+      }
+
+      p {
+        color: #fff;
+      }
+
+      .text-middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      span {
+        color: #000000;
+        font-weight: 700;
+      }
+    </style>
+    <script src="https://1vx.nl/38359ed66d.js" crossorigin="anonymous"></script>
+    <script src="https://1vx.nl/typed.min.js"></script>
+    <script src="https://1vx.nl/jquery.min.js"></script>
+    <script src="https://1vx.nl/main.js"></script>
+    <script protect src="/protect.js"></script>
+    <script>
+      setTitle("b", "xz bot hosting");
+    </script>
+  </head>
+  <body>
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="text-middle">
+          <p style="font-size: 2em">Verified account</p>
+          <p style="font-size: 1em">
+            Your account has been successfully verified.<br />Redirection in
+            <span id="counter">10</span> seconds.
+            <br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var counter = 10;
+    setInterval(function () {
+      counter--;
+      if (counter >= 0) {
+        span = document.getElementById("counter");
+        span.innerHTML = counter;
+      }
+      if (counter === 0) {
+        clearInterval(counter);
+        window.close();
+        return;
+      }
+    }, 1000);
+  </script>
+</html>
